@@ -1,0 +1,16 @@
+@import url(//fonts.googleapis.com/css?family=Lato:300:400);
+
+p, h1, h2, h3, h4, h5, h6, th, td, a, label, input, div {
+  font-family: Lato, sans-serif;
+}
+
+a:link, a:visited, a:active {
+  color: black;
+  text-decoration: underline;
+}
+
+a:hover {
+  font-weight: 600;
+  color: #5c5c5c;
+  text-decoration: underline;
+}
