@@ -7,7 +7,7 @@ typed_strings = typed_strings.split(',');
 
 while (true) {
   typed_strings.forEach((item, i) => {
-    console.log(item);
+    typed.innerHTML = item;
   });
 
 }
