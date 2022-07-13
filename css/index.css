@@ -1,0 +1,29 @@
+@import url("master.css");
+
+.resume_item {
+    padding: 0 0 10px 20px;
+    margin-top: -2px;
+    border-left: 2px solid var(--headline);
+    position: relative;
+}
+
+.resume_item::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50px;
+    left: -11px;
+    top: 0;
+    background: var(--background);
+    border: 2px solid var(--headline);
+}
+
+.resume_item_title {
+    text-transform: uppercase;
+    color: var(--headline);
+}
+
+.resume_category_title {
+    color: var(--sub_headline);
+}

@@ -1,16 +1,83 @@
 @import url(//fonts.googleapis.com/css?family=Lato:300:400);
 
-p, h1, h2, h3, h4, h5, h6, th, td, a, label, input, div {
-  font-family: Lato, sans-serif;
+/*
+Base Variables
+*/
+:root {
+  /*Elements*/
+  --background: #fffffe;
+  --headline: #094067;
+  --sub_headline: #5f6c7b;
+  --paragraph: #5f6c7b;
+  --button: #3da9fc;
+  --button_border: #3087c9;
+  --button_text: #fffffe;
+  --button_hover: #3087c9;
+
+  /*Illustrations*/
+  --stroke: #094067;
+  --main: #fffffe;
+  --highlight: #3da9fc;
+  --secondary: #90b4ce;
+  --tertiary: #ef4565;
+
+  /*Typeface & Font*/
+  --typeface: Lato, sans-serif;
+
+  /*Horizontal Rule*/
+  --hr_colour: #5f6c7b;
+}
+
+/*
+Elements
+*/
+body {
+  background-color: var(--background);
+  padding-right: 15%;
+  padding-left: 15%;
+}
+
+h1, h2 {
+  font-family: var(--typeface);
+  color: var(--headline);
+}
+
+h3, h4, h5, h6 {
+  font-family: var(--typeface);
+  color: var(--sub_headline);
+}
+
+p, th, td, a, label, input, div {
+  font-family: var(--typeface);
+  color: var(--paragraph)
 }
 
 a:link, a:visited, a:active {
-  color: black;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:hover {
-  font-weight: 600;
-  color: #5c5c5c;
   text-decoration: underline;
+}
+
+button {
+  background-color: var(--button);
+  color: var(--button_text);
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid var(--button_border);
+}
+
+button:hover {
+  background-color: var(--button_hover);
+}
+
+/*
+Horizontal Rules
+*/
+hr.rounded {
+  border: 1px solid var(--hr_colour);
+  background-color: var(--hr_colour);
+  border-radius: 20px;
 }
