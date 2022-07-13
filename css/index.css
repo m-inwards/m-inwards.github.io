@@ -24,6 +24,10 @@
     color: var(--headline);
 }
 
+.resume_item_text {
+    margin-top: -20px;
+}
+
 .resume_category_title {
     color: var(--sub_headline);
 }
