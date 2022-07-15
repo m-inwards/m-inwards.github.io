@@ -17,6 +17,11 @@ SKILLS SECTION
     text-align: center;
 }
 
+.skill_label {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
 .skill_table {
     width: 100%;
 }
