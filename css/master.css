@@ -25,7 +25,7 @@ Base Variables
   --typeface: Lato, sans-serif;
 
   /*Horizontal Rule*/
-  --hr_colour: #5f6c7b;
+  --hr_colour: #3da9fc;
 }
 
 /*
@@ -76,8 +76,9 @@ button:hover {
 /*
 Horizontal Rules
 */
-hr.rounded {
+.rounded_line {
   border: 1px solid var(--hr_colour);
   background-color: var(--hr_colour);
   border-radius: 20px;
+  width: 30px;
 }
