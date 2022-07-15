@@ -77,8 +77,10 @@ button:hover {
 Horizontal Rules
 */
 .rounded_line {
-  border: 1px solid var(--hr_colour);
+  border: 2px solid var(--hr_colour);
   background-color: var(--hr_colour);
   border-radius: 20px;
   width: 30px;
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -1,10 +1,66 @@
 @import url("master.css");
 
+#page_title {
+    text-align: center;
+}
+
+.page_section_title {
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/*
+SKILLS SECTION
+*/
+#skill_intro_text {
+    text-align: center;
+}
+
+.skill_table {
+    width: 100%;
+}
+
+.skill_table td {
+    width: 50%;
+    padding-right: 25px;
+}
+
+.skill_bar_container {
+    background-color: #e3e3e3;
+    width: 100%;
+}
+
+.skill_bar {
+    background-color: var(--headline);
+    height: 10px;
+}
+
+/*
+RESUME SECTION
+*/
+#resume_intro_text {
+    text-align: center;
+}
+
+#resume_table {
+    margin-top: -25px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+#resume_table td {
+    width: 50%;
+    padding-right: 20px;
+    vertical-align: top;
+}
+
 .resume_item {
     padding: 0 0 10px 20px;
     margin-top: -2px;
     margin-bottom: -22px;
-    border-left: 2px solid var(--headline);
+    border-left: 2px solid var(--button);
     position: relative;
 }
 
@@ -27,7 +83,7 @@
 }
 
 .item_time_period {
-    background: #e3e3e3;
+    background-color: #e3e3e3;
     color: black;
     display: inline-block;
     font-weight: bold;
