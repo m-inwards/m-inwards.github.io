@@ -10,3 +10,9 @@
     width: 33px;
     transition: all 100ms linear;
 }
+
+.static:hover {
+    opacity: 1;
+    height: 35px;
+    width: 35px;
+}

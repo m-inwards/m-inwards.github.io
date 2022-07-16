@@ -12,6 +12,38 @@
 }
 
 /*
+ABOUT SECTION
+*/
+#profile_pic {
+    border-radius: 100px;
+    width: 100%;
+}
+
+.about_table_left {
+    width: 33%;
+}
+
+.about_table_right {
+    width: 67%;
+    vertical-align: top;
+    padding-left: 50px;
+}
+
+#about_stats {
+    width: 100%;
+}
+
+#about_stats td {
+    width: 50%;
+    vertical-align: top;
+}
+
+.about_stat_item {
+    display: flex;
+    align-items: center;
+}
+
+/*
 SKILLS SECTION
 */
 #skill_intro_text {
