@@ -1,0 +1,17 @@
+@import url("var.css");
+
+#page_header {
+    padding-right: 15%;
+    padding-left: 15%;
+    -webkit-box-shadow: 0 8px 10px 3px #ddd;
+    -moz-box-shadow: 0 8px 10px 3px #ddd;
+    box-shadow: 0 8px 10px 3px #ddd;
+}
+
+#page_title {
+
+}
+
+#nav {
+    float: right;
+}
