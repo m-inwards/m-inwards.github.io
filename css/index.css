@@ -38,7 +38,7 @@ SKILLS SECTION
 }
 
 .skill_bar {
-    background-color: var(--headline);
+    background-color: var(--button);
     height: 10px;
 }
 
