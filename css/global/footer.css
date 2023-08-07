@@ -1,0 +1,18 @@
+#footer {
+    background-color: #2e2e2e;
+    margin-top: 10px;
+}
+
+#footer p {
+    color: white;
+    font-size: 12px;
+    text-align: center;
+}
+
+#footer-github-link {
+    cursor: pointer;
+}
+
+#footer-github-link:hover {
+    text-decoration: underline;
+}
