@@ -1,0 +1,18 @@
+@import "site_variables.css";
+@import "header.css";
+@import "footer.css";
+
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--background);
+}
+
+main {
+    flex: 1;
+    padding: 0 50px 0 50px;
+}

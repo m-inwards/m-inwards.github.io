@@ -1,0 +1,11 @@
+header {
+    -webkit-box-shadow: 3px 3px 10px 3px #dddddd;
+    -moz-box-shadow: 3px 3px 10px 3px #dddddd;
+    box-shadow: 3px 3px 10px 3px #dddddd;
+    min-height: 50px;
+    margin: 0 0 20px 0;
+    padding: 10px 0 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

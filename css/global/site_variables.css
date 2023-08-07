@@ -1,0 +1,13 @@
+:root {
+    /*Colours*/
+    --background: #fcfcfc;
+    --headline: #181818;
+    --sub_headline: #2E2E2E;
+    --paragraph: #2E2E2E;
+    --button: #00285A;
+    --button_hover: #002552;
+    --button_text: #FFFFFE;
+
+    /*Typeface*/
+    --typeface: Lato, sans-serif;
+}
