@@ -1,10 +1,27 @@
 <link rel="stylesheet" href="/css/global/header.css">
 <div id="header-top-bar">
-    <img id="header-menu-icon" src="/media/icons/menu_icon.png" alt="menu-icon" onclick="toggle_menu();">
+    <img id="header-menu-icon" class="hover-shrink" src="/media/icons/menu_icon.png" alt="menu-icon" onclick="toggle_menu();">
     <h2 id="header-title-text">@M-Inwards</h2>
 </div>
 <div id="header-side-menu-container" onclick="toggle_menu();">
     <div id="header-side-menu" onclick="event.cancelBubble = true">
-        This is the side menu
+        <div id="header-menu-options-container">
+            <div class="header-menu-option hover-shrink">
+                <p>Home</p>
+                <img src="/media/icons/arrow.png" alt="arrow-icon">
+            </div>
+            <div class="header-menu-option hover-shrink">
+                <p>About Me</p>
+                <img src="/media/icons/arrow.png" alt="arrow-icon">
+            </div>
+            <div class="header-menu-option hover-shrink">
+                <p>Portfolio</p>
+                <img src="/media/icons/arrow.png" alt="arrow-icon">
+            </div>
+            <div class="header-menu-option hover-shrink">
+                <p>Professional Experience</p>
+                <img src="/media/icons/arrow.png" alt="arrow-icon">
+            </div>
+        </div>
     </div>
 </div>
