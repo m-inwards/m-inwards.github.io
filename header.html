@@ -1,1 +1,10 @@
-<div>This is the header</div>
+<link rel="stylesheet" href="/css/global/header.css">
+<div id="header-top-bar">
+    <img id="header-menu-icon" src="/media/icons/menu_icon.png" alt="menu-icon" onclick="toggle_menu();">
+    <h2 id="header-title-text">@M-Inwards</h2>
+</div>
+<div id="header-side-menu-container" onclick="toggle_menu();">
+    <div id="header-side-menu" onclick="event.cancelBubble = true">
+        This is the side menu
+    </div>
+</div>

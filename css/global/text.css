@@ -1,0 +1,23 @@
+h1, h2 {
+    font-family: var(--typeface);
+    color: var(--headline);
+}
+
+h3, h4, h5, h6 {
+    font-family: var(--typeface);
+    color: var(--sub_headline);
+}
+
+p, th, td, a, label, input, div, textarea {
+    font-family: var(--typeface);
+    color: var(--paragraph)
+}
+
+a:link, a:visited, a:active {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

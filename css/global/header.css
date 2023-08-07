@@ -1,11 +1,41 @@
 header {
+
+}
+
+#header-top-bar {
     -webkit-box-shadow: 3px 3px 10px 3px #dddddd;
     -moz-box-shadow: 3px 3px 10px 3px #dddddd;
     box-shadow: 3px 3px 10px 3px #dddddd;
     min-height: 50px;
     margin: 0 0 20px 0;
-    padding: 10px 0 10px 0;
+    padding: 10px 25px 10px 25px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+#header-menu-icon {
+    width: 30px;
+    cursor: pointer;
+}
+
+#header-title-text {
+    margin: 0;
+    padding: 0;
+}
+
+#header-side-menu-container {
+    display: none;
+    width: 100%;
+    margin: -20px 0 0 0;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#header-side-menu {
+    background-color: var(--background);
+    box-sizing: border-box;
+    width: 300px;
+    height: 100%;
+    padding: 10px 20px 10px 20px;
 }
