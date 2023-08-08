@@ -2,23 +2,37 @@
 <div id="header-top-bar">
     <img id="header-menu-icon" class="hover-shrink" src="/media/icons/menu_icon.png" alt="menu-icon" onclick="toggle_menu();">
     <h2 id="header-title-text">@M-Inwards</h2>
+    <div id="header-right-items-container">
+        <a href="https://github.com/m-inwards">
+            <img class="social-icon hover-shrink" src="/media/icons/github_icon.png" alt="GitHub Link">
+        </a>
+        <a href="https://www.linkedin.com/in/matthew-inwards-932746182/">
+            <img class="social-icon hover-shrink" src="/media/icons/linkedin_icon.png" alt="LinkedIn Link">
+        </a>
+        <a href="https://www.instagram.com/mattinwards_/">
+            <img class="social-icon hover-shrink" src="/media/icons/instagram_icon.png" alt="Instagram Link">
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=100010195260402">
+            <img class="social-icon hover-shrink" src="/media/icons/facebook_icon.png" alt="Facebook Link">
+        </a>
+    </div>
 </div>
 <div id="header-side-menu-container" onclick="toggle_menu();">
     <div id="header-side-menu" onclick="event.cancelBubble = true">
         <div id="header-menu-options-container">
-            <div class="header-menu-option hover-shrink">
+            <div class="header-menu-option hover-shrink" onclick="window.location.href = '/'">
                 <p>Home</p>
                 <img src="/media/icons/arrow.png" alt="arrow-icon">
             </div>
-            <div class="header-menu-option hover-shrink">
+            <div class="header-menu-option hover-shrink" onclick="window.location.href = '/about_me'">
                 <p>About Me</p>
                 <img src="/media/icons/arrow.png" alt="arrow-icon">
             </div>
-            <div class="header-menu-option hover-shrink">
+            <div class="header-menu-option hover-shrink" onclick="window.location.href = '/portfolio'">
                 <p>Portfolio</p>
                 <img src="/media/icons/arrow.png" alt="arrow-icon">
             </div>
-            <div class="header-menu-option hover-shrink">
+            <div class="header-menu-option hover-shrink" onclick="window.location.href = '/professional_experience'">
                 <p>Professional Experience</p>
                 <img src="/media/icons/arrow.png" alt="arrow-icon">
             </div>

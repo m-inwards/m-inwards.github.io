@@ -1,5 +1,4 @@
 header {
-
 }
 
 #header-top-bar {
@@ -23,6 +22,18 @@ header {
 #header-title-text {
     margin: 0;
     padding: 0;
+}
+
+#header-right-items-container {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 3px;
+}
+
+.social-icon {
+    width: 35px;
 }
 
 #header-side-menu-container {
