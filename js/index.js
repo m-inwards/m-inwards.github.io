@@ -1,6 +1,10 @@
-let top_bar = document.getElementById('header-top-bar');
+function remove_top_bar_shadow() {
+    let top_bar = document.getElementById('header-top-bar');
 
-top_bar.style.boxShadow = 'none'
+    top_bar.style.boxShadow = 'none'
+}
+
+setTimeout(remove_top_bar_shadow, 50);
 
 /*Typing Code Start*/
 let txt_array = [
