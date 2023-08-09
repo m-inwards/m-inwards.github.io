@@ -9,11 +9,21 @@
     <link rel="stylesheet" href="/css/global/master.css">
     <script src="/js/global/header.js" defer></script>
     <!--FILE SPECIFIC LINKS-->
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="/js/index.js" defer></script>
 </head>
 <body>
 <header id="header"><!--Header will be pasted here--></header>
 <main>
-    This site is under renovations, to see the old version please click <span style="cursor: pointer; color: #3da9fc" onclick="window.location.href = '/index_old'">here</span>
+    <video autoplay muted loop src="/media/video/web_dev.mp4" id="home-bg-video"></video>
+    <div id="home-content">
+        <p id="home-pre-type-text">Hi there. My name is Matt, and I'm a...</p>
+        <p id="home-type-text"><span id="home-typewriter">Website Developer</span><span class="blinker">|</span></p>
+        <div id="home-action-buttons-container">
+            <button class="hover-shrink" onclick="window.location.href='/about_me'">About me</button>
+            <button class="hover-shrink">Get in Touch</button>
+        </div>
+    </div>
 </main>
 <footer id="footer"><!--Footer will be pasted here--></footer>
 </body>

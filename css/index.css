@@ -1,0 +1,57 @@
+main {
+    display: flex;
+    align-items: center;
+}
+
+#home-bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -5;
+    filter: brightness(0.5);
+}
+
+#home-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#home-pre-type-text {
+    color: var(--button);
+    font-style: italic;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+#home-type-text {
+    color: white;
+    font-size: 80px;
+    margin: 0;
+    padding: 0;
+}
+
+.blinker {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker{
+    50%{
+        opacity: 0;
+    }
+}
+
+#home-action-buttons-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+#home-action-buttons-container button {
+    font-size: 15px;
+}
