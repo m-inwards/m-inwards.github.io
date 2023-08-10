@@ -2,8 +2,9 @@ function toggle_menu() {
     let menu_container = document.getElementById('header-side-menu-container');
     let menu = document.getElementById('header-side-menu');
 
-    if (menu_container.style.display === 'block') {
-        menu_container.style.display = 'none';
+    if (menu_container.style.visibility === 'visible') {
+        menu_container.style.visibility = 'hidden';
+        menu_container.style.opacity = '0';
     } else {
         let header_top_bar = document.getElementById('header-top-bar');
 
@@ -12,6 +13,7 @@ function toggle_menu() {
         menu_container.style.top = String(header_top_bar.offsetHeight + 20) + 'px';
         menu_container.style.left = '0';
 
-        menu_container.style.display = 'block';
+        menu_container.style.visibility = 'visible';
+        menu_container.style.opacity = '1';
     }
 }

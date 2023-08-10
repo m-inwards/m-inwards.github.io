@@ -20,6 +20,11 @@ header {
     cursor: pointer;
 }
 
+#header-site-logo {
+    height: 33px;
+    cursor: pointer;
+}
+
 #header-title-text {
     margin: 0;
     padding: 0;
@@ -38,10 +43,12 @@ header {
 }
 
 #header-side-menu-container {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
     width: 100%;
     margin: -20px 0 0 0;
     background-color: rgba(0, 0, 0, 0.1);
+    transition: visibility 0s, opacity .1s linear;
 }
 
 #header-side-menu {
