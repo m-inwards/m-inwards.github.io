@@ -10,3 +10,33 @@
     width: 30%;
     border-radius: 100px;
 }
+
+.education-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 15px 0 0 0;
+}
+
+.education-item {
+    width: 400px;
+}
+
+.education-item h2 {
+    font-size: 23px;
+    margin: 0;
+    padding: 0;
+}
+
+.education-item h3 {
+    font-size: 18px;
+    color: #5f6c7b;
+    margin: 0;
+    padding: 0;
+}
+
+.education-item p {
+    font-size: 16px;
+    margin: 8px 0 0 0;
+    padding: 0;
+}
