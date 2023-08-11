@@ -16,17 +16,21 @@ function toggle_menu() {
     }
 }
 
-switch (window.location.pathname) {
-    case '/':
-        document.getElementById('home-menu-option').classList.add('active-menu-option');
-        break;
-    case '/about_me':
-        document.getElementById('about-me-menu-option').classList.add('active-menu-option');
-        break;
-    case '/portfolio':
-        document.getElementById('portfolio-menu-option').classList.add('active-menu-option');
-        break;
-    case '/professional_experience':
-        document.getElementById('experience-menu-option').classList.add('active-menu-option');
-        break;
+function highlight_active_menu_option() {
+    switch (window.location.pathname) {
+        case '/':
+            document.getElementById('home-menu-option').classList.add('active-menu-option');
+            break;
+        case '/about_me':
+            document.getElementById('about-me-menu-option').classList.add('active-menu-option');
+            break;
+        case '/portfolio':
+            document.getElementById('portfolio-menu-option').classList.add('active-menu-option');
+            break;
+        case '/professional_experience':
+            document.getElementById('experience-menu-option').classList.add('active-menu-option');
+            break;
+    }
 }
+
+setTimeout(highlight_active_menu_option, 50);
