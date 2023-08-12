@@ -1,0 +1,97 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#professional-experience-container {
+    width: fit-content;
+}
+
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: fit-content;
+    margin: 0 0 20px 0;
+}
+
+.timeline-event {
+    -webkit-box-shadow: 3px 3px 10px 3px #dddddd;
+    -moz-box-shadow: 3px 3px 10px 3px #dddddd;
+    box-shadow: 3px 3px 10px 3px #dddddd;
+    width: fit-content;
+    border-radius: 20px;
+    padding: 30px 25px 30px 25px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 600px;
+}
+
+.timeline-event:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: calc(30px - 10px + 0.5em);
+    left: -35px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid var(--button);
+    background-color: var(--background);
+    z-index: 1;
+}
+
+.timeline-event .timeline-event-line {
+    display: block;
+    position: absolute;
+    background-color: var(--button);
+    border-radius: 10px;
+    width: 4px;
+    height: calc(100% + 15px);
+    top: calc(30px + 0.5em);;
+    left: calc(-35px + 11px);
+}
+
+.timeline-event:last-child .timeline-event-line {
+    display: none;
+}
+
+.timeline-event-job-title {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--button);
+}
+
+.timeline-title .timeline-event-job-title{
+    color: var(--headline);
+    font-size: 20px;
+}
+
+.timeline-event-date {
+    background-color: #dbdbdb;
+    width: fit-content;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+}
+
+.timeline-event-employer {
+    font-style: italic;
+}
+
+.timeline-event-description {
+
+}
+
+/*Mobile*/
+@media only screen and (max-width: 600px) {
+    main {
+        padding: 0 10px 0 50px;
+    }
+
+    .timeline-title {
+        width: 100%;
+    }
+}
