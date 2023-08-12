@@ -19,3 +19,10 @@ main {
     padding: 0 50px 0 50px;
     box-sizing: border-box;
 }
+
+/*Mobile*/
+@media only screen and (max-width: 600px) {
+    main {
+        padding: 0;
+    }
+}
