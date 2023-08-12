@@ -32,9 +32,12 @@ header {
 
 #header-right-items-container {
     margin-left: auto;
+
+}
+
+.social-icon-container {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
     gap: 3px;
 }
 
@@ -55,6 +58,8 @@ header {
     width: 300px;
     height: 100%;
     padding: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 #header-menu-options-container {
@@ -85,6 +90,14 @@ header {
 .header-menu-option img {
     width: 25px;
     margin-left: auto;
+}
+
+#header-side-menu-bottom-items-container {
+    padding: 10px 10px 10px 10px;
+    margin: auto 15px 5px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
