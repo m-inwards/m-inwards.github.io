@@ -86,3 +86,10 @@ header {
     width: 25px;
     margin-left: auto;
 }
+
+
+@media only screen and (max-width: 420px) {
+    #header-right-items-container {
+        display: none;
+    }
+}

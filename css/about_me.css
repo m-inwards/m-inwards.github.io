@@ -4,11 +4,16 @@
     padding: 30px 50px 0 50px;
     align-items: flex-start;
     justify-content: center;
+    box-sizing: border-box;
 }
 
 #about-me-profile-picture {
     width: 30%;
     border-radius: 100px;
+}
+
+#about-me-content-container {
+    width: 70%;
 }
 
 .education-container {
@@ -39,4 +44,37 @@
     font-size: 16px;
     margin: 8px 0 0 0;
     padding: 0;
+}
+
+/*Tablets*/
+@media only screen and (max-width: 980px) {
+    #profile-column-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #about-me-profile-picture {
+        width: clamp(300px, 100%, 500px);
+    }
+
+    #about-me-content-container {
+        width: 100%;
+    }
+
+    .education-container {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .education-item {
+        width: 100%;
+    }
+}
+
+/*Mobile*/
+@media only screen and (max-width: 600px) {
+    #about-me-profile-picture {
+        display: none;
+    }
 }
