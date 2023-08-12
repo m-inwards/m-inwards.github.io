@@ -17,6 +17,8 @@ function toggle_menu() {
 }
 
 function highlight_active_menu_option() {
+    console.log(window.location.pathname)
+
     switch (window.location.pathname) {
         case '/':
             document.getElementById('home-menu-option').classList.add('active-menu-option');
@@ -24,7 +26,7 @@ function highlight_active_menu_option() {
         case '/about_me':
             document.getElementById('about-me-menu-option').classList.add('active-menu-option');
             break;
-        case '/portfolio':
+        case '/portfolio/':
             document.getElementById('portfolio-menu-option').classList.add('active-menu-option');
             break;
         case '/professional_experience':

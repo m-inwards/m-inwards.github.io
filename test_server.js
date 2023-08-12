@@ -17,6 +17,14 @@ app.get('/professional_experience', function(req, res) {
     res.sendFile(path.join(__dirname + '/professional_experience.html'));
 });
 
+app.get('/portfolio', function(req, res) {
+    res.sendFile(path.join(__dirname + '/portfolio/index.html'));
+});
+
+app.get('/portfolio/harvard_referencing', function(req, res) {
+    res.sendFile(path.join(__dirname + '/portfolio/harvard_referencing.html'));
+});
+
 app.listen(8000);
 require('child_process').exec('start http://localhost:8000');
 console.log('Test server running!');
