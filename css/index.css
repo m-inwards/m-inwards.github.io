@@ -65,5 +65,15 @@ main {
 
 /*Mobile*/
 @media only screen and (max-width: 600px) {
+    #home-content {
+        padding: 0 40px 0 40px;
+    }
 
+    #home-pre-type-text {
+        font-size: 25px;
+    }
+
+    #home-type-text {
+        font-size: 70px;
+    }
 }
