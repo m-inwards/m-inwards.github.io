@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="shortcut icon" href="/media/profile_pic.png" type="image/x-icon">
+    <title>@m-inwards | Harvard Referencing</title>
+    <!--MASTER FILE LINKS-->
+    <script src="/js/global/master.js"></script>
+    <link rel="stylesheet" href="/css/global/master.css">
+    <script src="/js/global/header.js" defer></script>
+    <!--FILE SPECIFIC LINKS-->
+    <link rel="stylesheet" href="/css/portfolio/harvard_referencing/index.css">
+    <script src="/js/portfolio/harvard_referencing/index.js" defer></script>
+</head>
+<body>
+<header id="header"><!--Header will be pasted here--></header>
+<main>
+    <div id="harvard-referencing-column-container">
+        <div id="harvard-referencing-column-select-type" class="harvard-referencing-column">
+            <h2>Select Item</h2>
+            <div id="referencing-items-container">
+                <!--Book Options-->
+                <div id="book-1" class="referencing-item hover-shrink referencing-item-active" onclick="select_referencing_item('book-1')">
+                    <p>Book (1 Author)</p>
+                    <img src="/media/icons/arrow.png" alt="arrow">
+                </div>
+                <div id="book-2" class="referencing-item hover-shrink" onclick="select_referencing_item('book-2')">
+                    <p>Book (2 Authors)</p>
+                    <img src="/media/icons/arrow.png" alt="arrow">
+                </div>
+                <div id="book-3" class="referencing-item hover-shrink" onclick="select_referencing_item('book-3')">
+                    <p>Book (3 or more Authors)</p>
+                    <img src="/media/icons/arrow.png" alt="arrow">
+                </div>
+                <!--Journal Article Options-->
+                <div id="journal-1" class="referencing-item hover-shrink" onclick="select_referencing_item('journal-1')">
+                    <p>Journal Article (1 Author)</p>
+                    <img src="/media/icons/arrow.png" alt="arrow">
+                </div>
+                <div id="journal-2" class="referencing-item hover-shrink" onclick="select_referencing_item('journal-2')">
+                    <p>Journal Article (2 Authors)</p>
+                    <img src="/media/icons/arrow.png" alt="arrow">
+                </div>
+                <div id="journal-3" class="referencing-item hover-shrink" onclick="select_referencing_item('journal-3')">
+                    <p>Journal Article (3 or more Authors)</p>
+                    <img src="/media/icons/arrow.png" alt="arrow">
+                </div>
+            </div>
+        </div>
+        <div id="harvard-referencing-column-input" class="harvard-referencing-column">
+            <h2>Fill Out Information</h2>
+        </div>
+        <div id="harvard-referencing-column-display" class="harvard-referencing-column">
+            <h2>Output</h2>
+        </div>
+    </div>
+</main>
+<footer id="footer"><!--Footer will be pasted here--></footer>
+</body>
+</html>

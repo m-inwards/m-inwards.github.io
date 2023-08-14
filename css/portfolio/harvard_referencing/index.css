@@ -1,0 +1,63 @@
+#harvard-referencing-column-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+#harvard-referencing-column-select-type {
+    width: 20%;
+}
+
+#harvard-referencing-column-input {
+    width: 30%;
+}
+
+#harvard-referencing-column-display {
+    width: 50%;
+}
+
+.harvard-referencing-column {
+    -webkit-box-shadow: 3px 3px 10px 3px #dddddd;
+    -moz-box-shadow: 3px 3px 10px 3px #dddddd;
+    box-shadow: 3px 3px 10px 3px #dddddd;
+    border-radius: 20px;
+    padding: 0 25px 30px 25px;
+}
+
+.harvard-referencing-column h2 {
+    font-size: 27px;
+}
+
+#referencing-items-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.referencing-item {
+    display: flex;
+    align-items: center;
+    padding: 7px 0 7px 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 3px 3px 10px 3px #dddddd;
+    -moz-box-shadow: 3px 3px 10px 3px #dddddd;
+    box-shadow: 3px 3px 10px 3px #dddddd;
+    cursor: pointer;
+}
+
+.referencing-item-active {
+    background-color: color-mix(in srgb, var(--button), #FFF 70%);
+    box-shadow: none;
+}
+
+.referencing-item p {
+    padding: 0;
+    margin: 0;
+}
+
+.referencing-item img {
+    padding: 0;
+    margin: 0 0 0 auto;
+    width: 30px;
+    height: 30px;
+}

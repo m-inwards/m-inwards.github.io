@@ -17,8 +17,6 @@ function toggle_menu() {
 }
 
 function highlight_active_menu_option() {
-    console.log(window.location.pathname)
-
     switch (window.location.pathname) {
         case '/':
             document.getElementById('home-menu-option').classList.add('active-menu-option');

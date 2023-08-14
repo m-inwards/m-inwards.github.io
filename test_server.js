@@ -22,7 +22,7 @@ app.get('/portfolio', function(req, res) {
 });
 
 app.get('/portfolio/harvard_referencing', function(req, res) {
-    res.sendFile(path.join(__dirname + '/portfolio/harvard_referencing.html'));
+    res.sendFile(path.join(__dirname + '/portfolio/harvard_referencing/index.html'));
 });
 
 app.listen(8000);
