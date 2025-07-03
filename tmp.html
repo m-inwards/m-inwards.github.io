@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Will you be my girlfriend?</title>
+    <link rel="shortcut icon" href="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678087-heart-256.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #EA9AAE;
+            color: #555;
+            font-size: 1.1em;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            overflow: hidden;
+            margin: 0;
+            display: flex; /* Use flexbox for centering */
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center horizontally */
+            justify-content: center; /* Center vertically */
+            min-height: 100vh; /* Ensure body takes full viewport height */
+            position: relative; /* Make body the positioning context for absolutely positioned elements */
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        #question-container {
+            /* Now only contains the image and question */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /*height: 100%; Removed this as body handles centering */
+            position: relative; /* Make this relative if you want elements inside to be absolutely positioned relative to it */
+        }
+
+        #question-pic {
+            border-radius: 10px;
+            height: 250px;
+            width: 250px;
+        }
+
+        #question, #yesText {
+            color: white;
+            font-size: 28px;
+            font-family: "Sour Gummy", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+            font-variation-settings: "wdth" 100;
+            text-align: center;
+        }
+
+        .question-button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            margin: 0 15px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease; /* Keep this for hover effects */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            transition: transform 0.1s ease-out;
+        }
+
+        #yesButton {
+            background-color: #28a745;
+            color: white;
+        }
+        #yesButton:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        #noButton {
+            background-color: #dc3545;
+            color: white;
+        }
+        #noButton:hover {
+            background-color: #c82333;
+            transform: translateY(-2px);
+        }
+
+        .tenor-gif-embed {
+            width: 400px !important;
+        }
+
+        .tenor-gif-embed iframe {
+            border-radius: 10px !important;
+        }
+    </style>
+</head>
+<body>
+<div id="question-container">
+    <img id="question-pic" src="https://img.freepik.com/premium-vector/cute-teddy-bear-holding-flower-cartoon-illustration_5586-89.jpg" alt="">
+    <h3 id="question">WILL YOU BE MY GIRLFRIEND?</h3>
+</div>
+
+<button id="yesButton" class="question-button">Yes!</button>
+<button id="noButton" class="question-button">No</button>
+
+<div id="yes-container" style="display: none">
+    <div class="tenor-gif-embed" data-postid="12455544583010709173" data-share-method="host" data-aspect-ratio="1.18227" data-width="100%">
+        <a href="https://tenor.com/view/bunny-dance-celebrate-gif-12455544583010709173">Bunny Dance Sticker</a>from <a href="https://tenor.com/search/bunny-stickers">Bunny Stickers</a>
+    </div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    <h3 id="yesText">YAY!</h3>
+</div>
+
+<script>
+    const yesButton = document.getElementById('yesButton');
+    const noButton = document.getElementById('noButton');
+    const questionContainer = document.getElementById('question-container');
+    const yesContainer = document.getElementById('yes-container');
+
+    // Initial positioning of buttons on load
+    window.addEventListener('load', () => {
+        const yesWidth = yesButton.offsetWidth;
+        const yesHeight = yesButton.offsetHeight;
+        const noWidth = noButton.offsetWidth;
+        const noHeight = noButton.offsetHeight;
+
+        // Center the "Yes" button below the question container
+        const questionRect = questionContainer.getBoundingClientRect();
+
+        yesButton.style.left = `${questionRect.left + (questionRect.width / 2) - (yesWidth / 2) - 50}px`; /* Adjusted for spacing */
+        yesButton.style.top = `${questionRect.bottom + 20}px`; // 20px below question container
+
+        noButton.style.left = `${questionRect.left + (questionRect.width / 2) - (noWidth / 2) + 50}px`; /* Adjusted for spacing */
+        noButton.style.top = `${questionRect.bottom + 20}px`; // Align with yesButton initially
+    });
+
+    noButton.addEventListener('mouseover', () => {
+        noButton.textContent = 'Are you sure?';
+    });
+
+    noButton.addEventListener('mouseout', () => {
+        noButton.textContent = 'No';
+    });
+
+    yesButton.addEventListener('click', () => {
+        questionContainer.style.display = 'none';
+        yesButton.style.display = 'none';
+        noButton.style.display = 'none';
+        yesContainer.style.display = 'inline-block';
+    });
+
+    noButton.addEventListener('click', () => {
+        alert("Well fuck you then!");
+    });
+</script>
+
+<script>
+    const buttonToMove = document.getElementById('noButton'); // Renamed for clarity
+    const moveDistance = 100; // How far the button moves away
+    const proximityThreshold = 150; // How close the cursor needs to be to trigger movement
+
+    document.addEventListener('mousemove', (e) => {
+        const buttonRect = buttonToMove.getBoundingClientRect();
+        const buttonCenterX = buttonRect.left + buttonRect.width / 2;
+        const buttonCenterY = buttonRect.top + buttonRect.height / 2;
+
+        const distanceX = e.clientX - buttonCenterX;
+        const distanceY = e.clientY - buttonCenterY;
+
+        const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+
+        if (distance < proximityThreshold) {
+            // Calculate new position away from the cursor
+            let newX = buttonCenterX - (distanceX / distance) * moveDistance;
+            let newY = buttonCenterY - (distanceY / distance) * moveDistance;
+
+            // Keep the button within the viewport
+            newX = Math.max(buttonRect.width / 2, Math.min(window.innerWidth - buttonRect.width / 2, newX));
+            newY = Math.max(buttonRect.height / 2, Math.min(window.innerHeight - buttonRect.height / 2, newY));
+
+            // Apply the new position
+            buttonToMove.style.left = `${newX - buttonToMove.offsetWidth / 2}px`;
+            buttonToMove.style.top = `${newY - buttonToMove.offsetHeight / 2}px`;
+        }
+    });
+</script>
+
+</body>
+</html>
