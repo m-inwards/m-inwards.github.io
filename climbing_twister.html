@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twister Selector</title>
+  <!-- Load Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Load Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    /* Define custom Tailwind configuration */
+    tailwind.config = {
+    theme: {
+    extend: {
+    colors: {
+    // Define custom colors for 'Wurple' and 'Gred' based on user request
+    'wurple': '#7e22ce', /* A vibrant purple */
+    'gred': '#dc2626',   /* A bright, strong red */
+    },
+    fontFamily: {
+      sans: ['Inter', 'sans-serif'],
+    },
+    }
+    }
+    }
+
+    /* Basic container styling to ensure full height and centering */
+    body {
+      height: 100vh;
+      margin: 0;
+      background-color: #f3f4f6; /* Light gray background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Custom animation for the result display */
+    .fade-in {
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Style for the color dot */
+    .color-dot {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 2px solid #374151; /* Dark border for contrast */
+      transition: all 0.3s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+
+<div id="app" class="w-full max-w-sm mx-auto p-6 md:p-8 bg-white shadow-2xl rounded-xl transform transition duration-500 hover:shadow-3xl">
+
+  <!-- Header -->
+  <h1 class="text-3xl font-extrabold text-gray-900 text-center mb-6 border-b pb-3">
+    Twister Spinner
+  </h1>
+
+  <!-- Result Display Card -->
+  <div id="result-display" class="bg-gray-100 p-6 rounded-lg mb-8 text-center min-h-[150px] flex flex-col justify-center items-center shadow-inner">
+    <p id="instruction-text" class="text-lg text-gray-600 font-medium">
+      Press the button to start!
+    </p>
+    <div id="selection-output" class="hidden">
+      <p id="body-part-output" class="text-4xl font-bold text-gray-800 mb-2"></p>
+      <div class="flex items-center justify-center space-x-3">
+        <div id="color-dot-output" class="color-dot"></div>
+        <p id="color-name-output" class="text-2xl font-semibold"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Spin Button -->
+  <button id="spin-button" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl shadow-lg transition duration-300 ease-in-out transform hover:scale-[1.02] active:scale-95 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50">
+    Spin the Selector
+  </button>
+
+</div>
+
+<script>
+  // Set up Firebase logging (standard practice for Canvas apps)
+  // setLogLevel('Debug');
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const bodyParts = ["Left Hand", "Right Hand", "Left Foot", "Right Foot"];
+    const colorOptions = [
+      { name: "Yellow", class: "bg-yellow-400 text-yellow-700" },
+      { name: "Orange", class: "bg-orange-500 text-orange-700" },
+      { name: "Grey", class: "bg-gray-400 text-gray-700" },
+      { name: "Wurple", class: "bg-wurple text-wurple-700" }, // Custom purple defined in style block
+      { name: "Pink", class: "bg-pink-500 text-pink-700" },
+      { name: "Blue", class: "bg-blue-500 text-blue-700" },
+      { name: "Gred", class: "bg-gred text-gred-700" } // Custom red defined in style block
+    ];
+
+    // DOM elements
+    const spinButton = document.getElementById('spin-button');
+    const instructionText = document.getElementById('instruction-text');
+    const selectionOutput = document.getElementById('selection-output');
+    const bodyPartOutput = document.getElementById('body-part-output');
+    const colorNameOutput = document.getElementById('color-name-output');
+    const colorDotOutput = document.getElementById('color-dot-output');
+    const resultDisplay = document.getElementById('result-display');
+
+    /**
+     * Gets a random item from an array.
+     * @param {Array<any>} arr The array to select from.
+     * @returns {any} A random item.
+     */
+    const getRandomItem = (arr) => {
+      return arr[Math.floor(Math.random() * arr.length)];
+    };
+
+    /**
+     * Generates a random body part and color combination and updates the UI.
+     */
+    const generateSelection = () => {
+      // 1. Get random selections
+      const randomBodyPart = getRandomItem(bodyParts);
+      const randomColor = getRandomItem(colorOptions);
+
+      // 2. Update UI visibility
+      instructionText.classList.add('hidden');
+      selectionOutput.classList.remove('hidden');
+
+      // Clear previous classes and content for a clean update
+      bodyPartOutput.textContent = '';
+      colorNameOutput.textContent = '';
+      colorNameOutput.className = 'text-2xl font-semibold'; // Reset classes
+      colorDotOutput.className = 'color-dot'; // Reset classes
+
+      // Add the fade-in animation class (will be removed by the next step)
+      selectionOutput.classList.remove('fade-in');
+      void selectionOutput.offsetWidth; // Trigger reflow to restart animation
+      selectionOutput.classList.add('fade-in');
+
+      // 3. Update Text Content
+      bodyPartOutput.textContent = randomBodyPart;
+      colorNameOutput.textContent = randomColor.name;
+
+      // 4. Update Styling (Color Dot and Text)
+      // The color classes are applied dynamically based on the selection
+
+      // Apply dot background color
+      // The name property is used here for the color dot's class
+      let bgColorClass = randomColor.name.toLowerCase() === 'grey' ? 'bg-gray-400' :
+              randomColor.name.toLowerCase() === 'yellow' ? 'bg-yellow-400' :
+                      randomColor.name.toLowerCase() === 'orange' ? 'bg-orange-500' :
+                              randomColor.name.toLowerCase() === 'pink' ? 'bg-pink-500' :
+                                      randomColor.name.toLowerCase() === 'blue' ? 'bg-blue-500' :
+                                              randomColor.name.toLowerCase() === 'wurple' ? 'bg-wurple' :
+                                                      randomColor.name.toLowerCase() === 'gred' ? 'bg-gred' : 'bg-gray-500';
+
+      colorDotOutput.classList.add(bgColorClass);
+
+      // Apply text color (to enhance readability, we use a darker shade of the selected color)
+      let textColorClass = randomColor.name.toLowerCase() === 'grey' ? 'text-gray-700' :
+              randomColor.name.toLowerCase() === 'yellow' ? 'text-yellow-700' :
+                      randomColor.name.toLowerCase() === 'orange' ? 'text-orange-700' :
+                              randomColor.name.toLowerCase() === 'pink' ? 'text-pink-700' :
+                                      randomColor.name.toLowerCase() === 'blue' ? 'text-blue-700' :
+                                              randomColor.name.toLowerCase() === 'wurple' ? 'text-wurple' :
+                                                      randomColor.name.toLowerCase() === 'gred' ? 'text-gred' : 'text-gray-700';
+
+      colorNameOutput.classList.add(textColorClass);
+
+      // Set result display background (optional visual flair)
+      resultDisplay.classList.remove('bg-gray-100');
+      resultDisplay.classList.add('bg-white');
+    };
+
+    // Event Listener for the button
+    spinButton.addEventListener('click', generateSelection);
+  });
+</script>
+
+</body>
+</html>
